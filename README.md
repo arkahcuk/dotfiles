@@ -1,2 +1,2 @@
 # Dotfiles
-![alt text](pictures/desktop.png)
+![alt text](pictures/samples/desktop.png)

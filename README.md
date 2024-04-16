@@ -3,3 +3,6 @@ Here are some of my config files I created for my own needs. Feel free to use th
 
 ## Bar & wallpaper
 ![alt text](pictures/screenshots/desktop.png)
+
+## Terminal
+![alt text](pictures/screenshots/terminal.png)

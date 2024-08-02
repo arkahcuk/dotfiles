@@ -87,7 +87,9 @@ brt() {
 	xrandr --output eDP --brightness $1
 }
 sa() {
-	eval `ssh-agent` && ssh-add ~/.ssh/id_ed25519
+	eval `ssh-agent`
+	KEY=${1:-~/.ssh/gw_key}
+	ssh-add $KEY
 }
 sz() {
 	du -h --max-depth=1 "${1:-./}" | sort -rh | head -n 11
@@ -105,23 +107,18 @@ alias :wq="exit"
 alias mps="mplayer -nosound"
 alias pip="python3 -m pip"
 alias odump="objdump -d a.out"
-
-alias gl="git ll | head -n 5 | tac"
 alias keyboard="setxkbmap -layout us,cz -variant ,ucw -option grp:switch"
-
 alias hx="helix"
 alias tb="nohup thunderbird &> /dev/null &!"
 alias viv="nohup vivaldi-stable &> /dev/null &!"
 alias vivaldi="vivaldi-stable"
+alias camera='qv4l2 &!'
 alias prolog="swipl"
-
 alias mountw="sudo mount -m /dev/nvme0n1p3 /mnt/Windows"
 alias umountw="sudo umount /mnt/Windows"
 alias mountd="sudo mount -m /dev/sda1 /mnt/D"
 alias umountd="sudo umount /mnt/D"
-
 alias ok="echo 'K.'"
-
 alias c="clear"
 alias cd..="cd .."
 alias sl="ls --color=auto"
@@ -132,7 +129,7 @@ alias vdir="vdir --color=auto"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-alias df="df -h"                          # human-readable sizes
+alias df="df -h"
 alias free="free -h"
 alias du="du -h"
 alias shred="shred -zf"
